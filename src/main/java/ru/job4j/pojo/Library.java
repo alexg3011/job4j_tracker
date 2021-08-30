@@ -12,19 +12,19 @@ public class Library {
         books[2] = book3;
         books[3] = book4;
         books[0].setName("Clean code");
-        for (int i = 0; i<4; i++) {
+        for (int i = 0; i<books.length; i++) {
             System.out.println(books[i]);
         }
         System.out.println();
         Book temp = books[3];
         books[3] = books[0];
         books[0] = temp;
-        for (int i = 0; i<4; i++) {
+        for (int i = 0; i<books.length; i++) {
             System.out.println(books[i]);
         }
         System.out.println();
-        for (int i = 0; i<4; i++) {
-            if (books[i].getName()!=null && books[i].getName().equals("Clean code")) {
+        for (int i = 0; i< books.length; i++) {
+            if (books[i].getName()!=null && "Clean code".equals(books[i].getName())) {
                 System.out.println(books[i]);
             }
         }
