@@ -47,7 +47,16 @@ public class Tracker {
         return rsl;
     }
 
-
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        if (index != -1) {
+            items[index] = item;
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
     public boolean delete(int id) {
         int index = indexOf(id);
