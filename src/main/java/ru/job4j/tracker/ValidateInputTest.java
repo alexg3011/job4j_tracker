@@ -42,13 +42,14 @@ public class ValidateInputTest {
         assertThat(selected, is(expected));
     }
 
-    @Test (expected = NumberFormatException.class)
+    @Test
     public void whenNegativeInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
                 new String[] { "-6"}
         );
         ValidateInput input = new ValidateInput(out, in);
-        throw new NumberFormatException();
+        int selected = input.askInt("Enter menu:");
+        assertThat(selected, is(-6));
     }
 }
