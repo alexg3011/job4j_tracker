@@ -5,7 +5,6 @@ import java.util.Arrays;
 public final class SingleTracker {
     private static SingleTracker instance = null;
     private Tracker tracker = new Tracker();
-    private final Item[] items = new Item[100];
 
     private SingleTracker(){}
 
