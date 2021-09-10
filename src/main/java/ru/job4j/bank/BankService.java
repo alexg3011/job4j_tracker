@@ -35,16 +35,17 @@ public class BankService {
 
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
-        List<Account> requis = users.get(user);
+        List<Account> requis = new ArrayList<>();
         Account result = null;
-        if (requis != null) {
+        if (user != null) {
+            requis = users.get(user);
+        }
             for (Account account : requis) {
                 if (account.getRequisite().equals(requisite)) {
                     result = account;
                     break;
                 }
             }
-        }
             return result;
 
     }
