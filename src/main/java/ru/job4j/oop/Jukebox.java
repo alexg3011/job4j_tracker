@@ -7,15 +7,14 @@ public class Jukebox {
         playMusic.music(1);
         playMusic.music(2);
     }
+
     public void music(int position) {
         if (position == 1) {
             System.out.println("Пусть бегут неуклюже");
-        }
-        else {
+        } else {
             if (position == 2) {
                 System.out.println("Спокойной ночи");
-            }
-            else {
+            } else {
                 System.out.println("Песня не найдена");
             }
 

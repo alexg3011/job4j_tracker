@@ -5,12 +5,14 @@ import java.util.List;
 
 public final class SingleTracker {
     private static SingleTracker instance = null;
-    private Tracker tracker = new Tracker();
+    private final Tracker tracker = new Tracker();
 
-    private SingleTracker(){}
+    private SingleTracker() {
+
+    }
 
     public static SingleTracker getInstance() {
-        if(instance==null) {
+        if (instance == null) {
             instance = new SingleTracker();
         }
         return instance;

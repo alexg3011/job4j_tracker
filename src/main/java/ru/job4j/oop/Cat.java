@@ -35,6 +35,7 @@ public class Cat {
         black.eat("fish");
         black.show();
     }
+
     public String sound() {
         String voice = "may-may";
         return voice;

@@ -47,7 +47,7 @@ public class ValidateInputTest {
     public void whenNegativeInput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] { "-6"}
+                new String[] {"-6"}
         );
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");

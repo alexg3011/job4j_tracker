@@ -27,6 +27,7 @@ public class PointTest {
         double rsl = a.distance3d(b);
         assertThat(rsl, closeTo(9, 0.001));
     }
+
     @Test
     public void distance3dTwo() {
         Point a = new Point(0, 0, 0);

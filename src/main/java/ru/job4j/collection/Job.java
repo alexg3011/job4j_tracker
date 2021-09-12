@@ -1,9 +1,9 @@
 package ru.job4j.collection;
 
-public class Job implements Comparable<Job>{
-    private String name;
+public class Job implements Comparable<Job> {
+    private final String name;
 
-    private int priority;
+    private final int priority;
 
     public Job(String name, int priority) {
         this.name = name;
@@ -20,10 +20,10 @@ public class Job implements Comparable<Job>{
 
     @Override
     public String toString() {
-        return "Job{" +
-                "name='" + name + '\'' +
-                ", priority=" + priority +
-                '}';
+        return "Job{"
+                + "name='" + name + '\''
+                + ", priority=" + priority
+                + '}';
     }
 
     @Override

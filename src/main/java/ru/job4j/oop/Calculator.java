@@ -1,6 +1,6 @@
 package ru.job4j.oop;
 
-public class Сalculator {
+public class Calculator {
     public double add(double first, double second) {
         return first + second;
     }

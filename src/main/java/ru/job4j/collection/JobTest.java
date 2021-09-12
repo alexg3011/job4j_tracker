@@ -6,6 +6,7 @@ import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
 
 public class JobTest {
+
     @Test
     public void whenCompatorByNameDesc() {
         Comparator<Job> cmpName = new JobDescByName();
@@ -15,6 +16,7 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByNameEqual() {
         Comparator<Job> cmpName = new JobDescByName();
@@ -24,6 +26,7 @@ public class JobTest {
         );
         assertThat(rsl, equalTo(0));
     }
+
     @Test
     public void whenCompatorByNameAsc() {
         Comparator<Job> cmpName = new JobAscByName();
@@ -33,6 +36,7 @@ public class JobTest {
         );
         assertThat(rsl, greaterThan(0));
     }
+
     @Test
     public void whenCompatorByPriorityDesc() {
         Comparator<Job> cmpPriority = new JobDescByPriority();
@@ -42,6 +46,7 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByPriorityAsc() {
         Comparator<Job> cmpPriority = new JobAscByPriority();
@@ -51,6 +56,7 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
+
     @Test
     public void whenCompatorByPriorityEqual() {
         Comparator<Job> cmpPriority = new JobDescByPriority();
@@ -60,9 +66,11 @@ public class JobTest {
         );
         assertThat(rsl, equalTo(0));
     }
+
     @Test
     public void whenCompatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(
+                new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("a", 0),
                 new Job("b", 1)

@@ -6,6 +6,7 @@ public class Jar {
     public Jar(int size) {
         this.value = size;
     }
+
     public void pour(Jar another) {
         this.value = this.value + another.value;
         another.value = 0;

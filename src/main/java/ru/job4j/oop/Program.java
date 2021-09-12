@@ -1,8 +1,10 @@
 package ru.job4j.oop;
 
-public class Program extends Programmer{
+public class Program extends Programmer {
 
-    public Program(String name, String surname, String education, String birthday, String tech, String computer) {
+    public Program(String name, String surname,
+                   String education, String birthday,
+                   String tech, String computer) {
         super(name, surname, education, birthday, tech, computer);
     }
 
