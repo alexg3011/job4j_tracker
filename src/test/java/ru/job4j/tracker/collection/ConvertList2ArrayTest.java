@@ -1,6 +1,5 @@
 package ru.job4j.tracker.collection;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import ru.job4j.collection.ConvertList2Array;
 
@@ -9,7 +8,6 @@ import java.util.Arrays;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
-@Ignore
 public class ConvertList2ArrayTest {
     @Test
     public void when7ElementsThen9() {
