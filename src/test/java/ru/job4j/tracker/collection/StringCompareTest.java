@@ -1,5 +1,6 @@
-package ru.job4j.collection;
+package ru.job4j.tracker.collection;
 import org.junit.Test;
+import ru.job4j.collection.StringCompare;
 
 import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.lessThan;

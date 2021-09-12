@@ -1,5 +1,7 @@
-package ru.job4j.collection;
+package ru.job4j.tracker.collection;
 import org.junit.Test;
+import ru.job4j.collection.*;
+
 import java.util.Comparator;
 
 import static org.hamcrest.Matchers.*;

@@ -1,5 +1,8 @@
-package ru.job4j.bank;
+package ru.job4j.tracker.bank;
 import org.junit.Test;
+import ru.job4j.bank.Account;
+import ru.job4j.bank.BankService;
+import ru.job4j.bank.User;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;

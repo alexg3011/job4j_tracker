@@ -1,7 +1,8 @@
-package ru.job4j.collection;
+package ru.job4j.tracker.collection;
 
 import org.junit.Ignore;
 import org.junit.Test;
+import ru.job4j.collection.ConvertList2Array;
 
 import java.util.Arrays;
 

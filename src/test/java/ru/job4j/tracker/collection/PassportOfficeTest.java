@@ -1,6 +1,8 @@
-package ru.job4j.collection;
+package ru.job4j.tracker.collection;
 
 import org.junit.Test;
+import ru.job4j.collection.Citizen;
+import ru.job4j.collection.PassportOffice;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
