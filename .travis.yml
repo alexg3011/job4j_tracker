@@ -18,3 +18,7 @@ notifications:
       - psihicus@gmail.com
     on_success: never # default: change
     on_failure: always # default: always
+env:
+  global:
+    -CODECOV_TOKEN='0cffceeb-3639-4f81-8a50-042f8bac9c90'
+
