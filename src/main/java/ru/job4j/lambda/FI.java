@@ -5,11 +5,14 @@ import java.util.Comparator;
 
 public class FI {
     public static void main(String[] args) {
-        Attachment[] atts = {
-                new Attachment("image 1", 20),
-                new Attachment("image 3", 120),
-                new Attachment("image 2", 23)
+        String[] names = {
+                "Ivan",
+                "Petr"
         };
-
+        Comparator<String> lengthCmp = (left, right) -> {
+            System.out.println("execute comparator");
+            return left.length() - right.length();
+        };
+        Arrays.sort(names, lengthCmp);
     }
 }
