@@ -11,8 +11,8 @@ public class LambdaUsage {
                 new Attachment("image 2", 23)
         };
         Comparator<Attachment> comparator = (left, right) -> {
-            System.out.println("compare - " + right.getSize() + " : " + left.getSize());
-            return right.getSize() - left.getSize();
+            System.out.println("compare - " + left.getSize() + " : " + right.getSize());
+            return Integer.compare(right.getSize(), left.getSize());
         };
         Arrays.sort(atts, comparator);
         for (Attachment a : atts) {

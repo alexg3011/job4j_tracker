@@ -11,7 +11,7 @@ public class FI {
         };
         Comparator<String> lengthCmp = (left, right) -> {
             System.out.println("execute comparator");
-            return left.length() - right.length();
+            return Integer.compare(left.length(), right.length());
         };
         Arrays.sort(names, lengthCmp);
     }
