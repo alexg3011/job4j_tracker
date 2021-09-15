@@ -1,16 +1,15 @@
 package ru.job4j.tracker.stream;
 
-import org.junit.Assert;
 import org.junit.Test;
-import ru.job4j.stream.*;
+import ru.job4j.stream.Address;
+import ru.job4j.stream.Profile;
+import ru.job4j.stream.Profiles;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Predicate;
 
 import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class ProfilesTest {
     @Test
