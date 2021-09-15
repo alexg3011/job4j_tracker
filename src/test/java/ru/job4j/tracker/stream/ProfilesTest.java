@@ -24,9 +24,29 @@ public class ProfilesTest {
         List<Address> rsl = profiles1.collect(profiles);
         List<Address> expected = Arrays.asList(
                 new Address("Moscow", "Arbat", 1, 2),
-                new Address("St. Petersburg", "Nevskij pr-t", 3, 4),
-                new Address("Sochi", "Polyana", 5, 6));
+                new Address("Sochi", "Polyana", 5, 6),
+                new Address("St. Petersburg", "Nevskij pr-t", 3, 4));
         assertThat(rsl, is(expected));
+    }
 
+    @Test
+    public void whenCollectAddressesSortAndDistinct() {
+        List<Profile> profiles = List.of(
+                new Profile(new Address("Sochi", "Polyana", 5, 6)),
+                new Profile(new Address("Sochi", "Polyana", 1, 2)),
+                new Profile(new Address("Sochi", "Polyana", 1, 2)),
+                new Profile(new Address("Moscow", "Arbat", 1, 2)),
+                new Profile(new Address("St. Petersburg", "Nevskij pr-t", 3, 4))
+
+
+        );
+        Profiles profiles1 = new Profiles();
+        List<Address> rsl = profiles1.collect(profiles);
+        List<Address> expected = Arrays.asList(
+                new Address("Moscow", "Arbat", 1, 2),
+                new Address("Sochi", "Polyana", 5, 6),
+                new Address("Sochi", "Polyana", 1, 2),
+                new Address("St. Petersburg", "Nevskij pr-t", 3, 4));
+        assertThat(rsl, is(expected));
     }
 }
