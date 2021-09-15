@@ -30,9 +30,9 @@ public class StreamUsage {
                 .forEach(System.out::println);
     }
 
-        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, -1, 2, -3, 0));
-        List<Integer> rsl = list.stream().filter(
-                num -> num > 0
-        ).collect(Collectors.toList());
+    ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, -1, 2, -3, 0));
+    List<Integer> rsl = list.stream().filter(
+            num -> num > 0
+    ).collect(Collectors.toList());
 
 }
