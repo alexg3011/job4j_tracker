@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 
 
 public class MatrixList {
-    public List<Integer>convert (Integer[][] matrix) {
+    public List<Integer> convert(Integer[][] matrix) {
 
         return Stream.of(matrix)
                 .flatMap(Stream::of)
