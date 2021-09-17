@@ -2,6 +2,7 @@ package ru.job4j.tracker.stream;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
+
 import org.junit.Test;
 import ru.job4j.stream.*;
 
@@ -52,9 +53,8 @@ public class AnalyzeTest {
                 ).stream()
         );
         assertThat(average, is(List.of(
-                new Tuple("Lang", 80D),
-                new Tuple("Math", 80D)
-
+                new Tuple("Math", 80D),
+                new Tuple("Lang", 80D)
         )));
     }
 
