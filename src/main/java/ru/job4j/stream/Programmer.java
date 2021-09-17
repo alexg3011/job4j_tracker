@@ -10,18 +10,6 @@ public class Programmer {
     private boolean sql;
     private boolean git;
 
-    public static void main(String[] args) {
-        Programmer programmer = new Builder().buildName("alex")
-                .buildSurname("alex")
-                .buildJava(true)
-                .buildSpring(true)
-                .buildHibernate(false)
-                .buildSql(true)
-                .buildGit(true)
-                .biuld();
-        System.out.println(programmer);
-    }
-
     static class Builder {
 
         private String name;
@@ -92,5 +80,17 @@ public class Programmer {
                 ", sql=" + sql +
                 ", git=" + git +
                 '}';
+    }
+
+    public static void main(String[] args) {
+        Programmer programmer = new Builder().buildName("alex")
+                .buildSurname("alex")
+                .buildJava(true)
+                .buildSpring(true)
+                .buildHibernate(false)
+                .buildSql(true)
+                .buildGit(true)
+                .biuld();
+        System.out.println(programmer);
     }
 }
