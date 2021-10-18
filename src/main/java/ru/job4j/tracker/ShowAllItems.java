@@ -16,7 +16,7 @@ public class ShowAllItems implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Store memTracker) throws SQLException {
+    public boolean execute(Input input, Store memTracker) {
         out.println("=== Show all items ====");
         List<Item> items = memTracker.findAll();
         if (items.size() > 0) {

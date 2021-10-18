@@ -16,7 +16,7 @@ public class FindItemByNameAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Store memTracker) throws SQLException {
+    public boolean execute(Input input, Store memTracker) {
         out.println("=== Find items by name ====");
         String name = input.askStr("Enter name: ");
         List<Item> items = memTracker.findByName(name);

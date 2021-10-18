@@ -15,7 +15,7 @@ public class FindItemByIdAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Store memTracker) throws SQLException {
+    public boolean execute(Input input, Store memTracker) {
         out.println("=== Find item by id ====");
         int id = input.askInt("Enter id: ");
         Item item = memTracker.findById(id);
