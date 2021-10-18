@@ -28,7 +28,7 @@ public class DepDescCompTest {
     }
 
     @Test
-    public void DepTestDesk() {
+    public void depTestDesk() {
         int rsl = new DepDescComp().compare(
                 "K2/",
                 "K1/SK1"

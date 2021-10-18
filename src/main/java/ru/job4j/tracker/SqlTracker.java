@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,6 +10,13 @@ import java.util.Properties;
 public class SqlTracker implements Store {
 
     private Connection cn;
+
+    public SqlTracker() {
+    }
+
+    public SqlTracker(Connection cn) {
+        this.cn = cn;
+    }
 
     public void init() {
         try (InputStream in = SqlTracker.class.getClassLoader()
@@ -21,15 +29,8 @@ public class SqlTracker implements Store {
                     config.getProperty("username"),
                     config.getProperty("password")
             );
-            try (Statement statement = cn.createStatement()) {
-                String sql = "create table if not exists tracker("
-                        + "id serial primary key,"
-                        + "name text,"
-                        + "created timestamp);";
-                statement.execute(sql);
-            }
-        } catch (Exception e) {
-            throw new IllegalStateException(e);
+        } catch (IOException | SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
         }
     }
 
@@ -43,7 +44,7 @@ public class SqlTracker implements Store {
     @Override
     public Item add(Item item) {
         try (PreparedStatement statement = cn.prepareStatement(
-                "insert into tracker(name, created) values (?, ?);",
+                "insert into items(name, created) values (?, ?);",
                 Statement.RETURN_GENERATED_KEYS)
         ) {
             statement.setString(1, item.getName());
@@ -64,9 +65,9 @@ public class SqlTracker implements Store {
     public boolean replace(int id, Item item) {
         boolean result = false;
         try (PreparedStatement statement = cn.prepareStatement(
-                "update tracker "
+                "update items "
                         + "set name = ?,"
-                        + "set created = ?;")
+                        + "created = ?;")
         ) {
             statement.setString(1, item.getName());
             statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
@@ -81,7 +82,7 @@ public class SqlTracker implements Store {
     public boolean delete(int id) {
         boolean result = false;
         try (PreparedStatement statement = cn.prepareStatement(
-                "delete from tracker "
+                "delete from items "
                         + "where id = ?;")
         ) {
             statement.setInt(1, id);
@@ -95,7 +96,7 @@ public class SqlTracker implements Store {
     @Override
     public List<Item> findAll() {
         List<Item> list = new ArrayList<>();
-        try (PreparedStatement statement = cn.prepareStatement("select * from tracker;")) {
+        try (PreparedStatement statement = cn.prepareStatement("select * from items;")) {
             try (ResultSet resultSet = statement.executeQuery()) {
                 while (resultSet.next()) {
                     list.add(new Item(
@@ -115,7 +116,7 @@ public class SqlTracker implements Store {
     public List<Item> findByName(String key) {
         List<Item> list = new ArrayList<>();
         try (PreparedStatement statement = cn.prepareStatement(
-                "select * from tracker"
+                "select * from items"
                         + " where name = ?;"
         )) {
             statement.setString(1, key);
@@ -138,7 +139,7 @@ public class SqlTracker implements Store {
     public Item findById(int id) {
         Item item = null;
         try (PreparedStatement statement = cn.prepareStatement(
-                "select * from tracker "
+                "select * from items "
                         + "where id = ?;")
         ) {
             statement.setInt(1, id);

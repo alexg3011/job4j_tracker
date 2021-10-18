@@ -37,7 +37,6 @@ public class ProfilesTest {
                 new Profile(new Address("Moscow", "Arbat", 1, 2)),
                 new Profile(new Address("St. Petersburg", "Nevskij pr-t", 3, 4))
 
-
         );
         Profiles profiles1 = new Profiles();
         List<Address> rsl = profiles1.collect(profiles);
