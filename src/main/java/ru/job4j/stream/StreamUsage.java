@@ -18,6 +18,8 @@ public class StreamUsage {
     }
 
     public static void main(String[] args) {
+        final List<Integer> list;
+        final List<Integer> rsl;
         List<Task> tasks = List.of(
                 new Task("Bug #1", 10),
                 new Task("Task #2", 20),
@@ -28,11 +30,10 @@ public class StreamUsage {
                 .filter(task -> task.spent > 30)
                 .map(task -> task.name + " " + task.spent)
                 .forEach(System.out::println);
+
+        list = new ArrayList<>(Arrays.asList(1, -1, 2, -3, 0));
+        rsl = list.stream().filter(
+                num -> num > 0
+        ).collect(Collectors.toList());
     }
-
-    ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, -1, 2, -3, 0));
-    List<Integer> rsl = list.stream().filter(
-            num -> num > 0
-    ).collect(Collectors.toList());
-
 }

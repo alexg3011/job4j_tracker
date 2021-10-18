@@ -71,15 +71,15 @@ public class Programmer {
 
     @Override
     public String toString() {
-        return "Programmer{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", java=" + java +
-                ", spring=" + spring +
-                ", hibernate=" + hibernate +
-                ", sql=" + sql +
-                ", git=" + git +
-                '}';
+        return "Programmer{"
+                + "name='" + name + '\''
+                + ", surname='" + surname + '\''
+                + ", java=" + java
+                + ", spring=" + spring
+                + ", hibernate=" + hibernate
+                + ", sql=" + sql
+                + ", git=" + git
+                + '}';
     }
 
     public static void main(String[] args) {
