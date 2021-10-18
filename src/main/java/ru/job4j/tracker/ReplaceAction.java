@@ -1,5 +1,8 @@
 package ru.job4j.tracker;
 
+import java.sql.SQLException;
+import java.time.LocalDateTime;
+
 public class ReplaceAction implements UserAction {
     private final Output out;
 
@@ -13,12 +16,12 @@ public class ReplaceAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store memTracker) throws SQLException {
         out.println("=== Edit item ====");
         int id = input.askInt("Enter id: ");
         String name = input.askStr("Enter name: ");
-        Item item = new Item(name);
-        if (tracker.replace(id, item)) {
+        Item item = new Item(name, LocalDateTime.now());
+        if (memTracker.replace(id, item)) {
             out.println("Заявка изменена успешно.");
         } else {
             out.println("Ошибка замены заявки.");

@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import ru.job4j.tracker.*;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,13 +15,13 @@ public class ItemSortTest {
     @Test
     public void itemSorterByIdTest() {
         List<Item> list = new ArrayList<>();
-        list.add(new Item("item1", 3));
-        list.add(new Item("item1", 2));
-        list.add(new Item("item1", 1));
+        list.add(new Item("item1", 3, LocalDateTime.now()));
+        list.add(new Item("item1", 2, LocalDateTime.now()));
+        list.add(new Item("item1", 1, LocalDateTime.now()));
         List<Item> sortedList = new ArrayList<>();
-        sortedList.add(new Item("item1", 1));
-        sortedList.add(new Item("item1", 2));
-        sortedList.add(new Item("item1", 3));
+        sortedList.add(new Item("item1", 1, LocalDateTime.now()));
+        sortedList.add(new Item("item1", 2, LocalDateTime.now()));
+        sortedList.add(new Item("item1", 3, LocalDateTime.now()));
         list.sort(new ItemSorterById());
         assertThat(sortedList, is(list));
     }
@@ -28,13 +29,13 @@ public class ItemSortTest {
     @Test
     public void itemSorterByNameTest() {
         List<Item> list = new ArrayList<>();
-        list.add(new Item("item3", 1));
-        list.add(new Item("item2", 1));
-        list.add(new Item("item1", 1));
+        list.add(new Item("item3", 1, LocalDateTime.now()));
+        list.add(new Item("item2", 1, LocalDateTime.now()));
+        list.add(new Item("item1", 1, LocalDateTime.now()));
         List<Item> sortedList = new ArrayList<>();
-        sortedList.add(new Item("item1", 1));
-        sortedList.add(new Item("item2", 1));
-        sortedList.add(new Item("item3", 1));
+        sortedList.add(new Item("item1", 1, LocalDateTime.now()));
+        sortedList.add(new Item("item2", 1, LocalDateTime.now()));
+        sortedList.add(new Item("item3", 1, LocalDateTime.now()));
         list.sort(new ItemSorterByName());
         assertThat(sortedList, is(list));
     }
@@ -42,13 +43,13 @@ public class ItemSortTest {
     @Test
     public void itemReverseByIdTest() {
         List<Item> list = new ArrayList<>();
-        list.add(new Item("item1", 2));
-        list.add(new Item("item1", 1));
-        list.add(new Item("item1", 3));
+        list.add(new Item("item1", 2, LocalDateTime.now()));
+        list.add(new Item("item1", 1, LocalDateTime.now()));
+        list.add(new Item("item1", 3, LocalDateTime.now()));
         List<Item> sortedList = new ArrayList<>();
-        sortedList.add(new Item("item1", 3));
-        sortedList.add(new Item("item1", 2));
-        sortedList.add(new Item("item1", 1));
+        sortedList.add(new Item("item1", 3, LocalDateTime.now()));
+        sortedList.add(new Item("item1", 2, LocalDateTime.now()));
+        sortedList.add(new Item("item1", 1, LocalDateTime.now()));
         list.sort(new ItemReversById());
         assertThat(sortedList, is(list));
     }
@@ -56,13 +57,13 @@ public class ItemSortTest {
     @Test
     public void itemReverseByNameTest() {
         List<Item> list = new ArrayList<>();
-        list.add(new Item("item2", 1));
-        list.add(new Item("item3", 1));
-        list.add(new Item("item1", 1));
+        list.add(new Item("item2", 1, LocalDateTime.now()));
+        list.add(new Item("item3", 1, LocalDateTime.now()));
+        list.add(new Item("item1", 1, LocalDateTime.now()));
         List<Item> sortedList = new ArrayList<>();
-        sortedList.add(new Item("item3", 1));
-        sortedList.add(new Item("item2", 1));
-        sortedList.add(new Item("item1", 1));
+        sortedList.add(new Item("item3", 1, LocalDateTime.now()));
+        sortedList.add(new Item("item2", 1, LocalDateTime.now()));
+        sortedList.add(new Item("item1", 1, LocalDateTime.now()));
         list.sort(new ItemReversByName());
         assertThat(sortedList, is(list));
     }

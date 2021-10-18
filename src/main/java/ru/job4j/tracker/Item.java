@@ -9,19 +9,21 @@ public class Item {
             = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
     private int id;
     private String name;
-    private final LocalDateTime created = LocalDateTime .now();
+    private final LocalDateTime created;
 
     public Item() {
-
+        this.created = LocalDateTime.now();
     }
 
-    public Item(String name) {
+    public Item(String name, LocalDateTime created) {
         this.name = name;
+        this.created = created;
     }
 
-    public Item(String name, int id) {
+    public Item(String name, int id, LocalDateTime created) {
         this.name = name;
         this.id = id;
+        this.created = created;
     }
 
     public LocalDateTime getCreated() {
