@@ -67,10 +67,12 @@ public class SqlTracker implements Store {
         try (PreparedStatement statement = cn.prepareStatement(
                 "update items "
                         + "set name = ?,"
-                        + "created = ?;")
+                        + "created = ?"
+                        + "where id = ?;")
         ) {
             statement.setString(1, item.getName());
             statement.setTimestamp(2, Timestamp.valueOf(item.getCreated()));
+            statement.setInt(3, id);
             result = statement.executeUpdate() > 0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -144,12 +146,13 @@ public class SqlTracker implements Store {
         ) {
             statement.setInt(1, id);
             try (ResultSet resultSet = statement.executeQuery()) {
-                resultSet.next();
-                item = new Item(
-                        resultSet.getString("name"),
-                        resultSet.getInt("id"),
-                        resultSet.getTimestamp("created").toLocalDateTime()
-                );
+                if (resultSet.next()) {
+                    item = new Item(
+                            resultSet.getString("name"),
+                            resultSet.getInt("id"),
+                            resultSet.getTimestamp("created").toLocalDateTime()
+                    );
+                }
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
