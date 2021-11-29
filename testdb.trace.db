@@ -6,3 +6,7 @@ UPDATE DATABASECHANGELOGLOCK SET LOCKED=0, LOCKGRANTED=null, LOCKEDBY=null where
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "LIQUIBASE[*]:DROPALL;"
 Syntax error in SQL statement "LIQUIBASE[*]:DROPALL;"; SQL statement:
 liquibase:dropAll; [42000-200]
+2021-11-29 21:07:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Таблица "DATABASECHANGELOGLOCK" не найдена
+Table "DATABASECHANGELOGLOCK" not found; SQL statement:
+SELECT COUNT(*) FROM DATABASECHANGELOGLOCK [42102-200]
