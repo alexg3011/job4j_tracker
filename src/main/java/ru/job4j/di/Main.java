@@ -13,6 +13,7 @@ public class Main {
         ui.add("Petr Arsentev");
         ui.add("Ivan ivanov");
         ui.print();
+
         console.askStr("Hi!");
     }
 }

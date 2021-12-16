@@ -27,4 +27,5 @@ public class StartUI {
     public int askInt(String question) {
         return input.askInt(question);
     }
+
 }
