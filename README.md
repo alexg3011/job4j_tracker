@@ -14,3 +14,5 @@ mvn install
 
 Запуск:
 java -jar target/tracker.jar
+
+Email для связи: alexandrg3011@gmail.com
